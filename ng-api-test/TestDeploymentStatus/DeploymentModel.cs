@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using ng_api_test.DeploymentStatus.Enums;
-
 namespace ng_api_test
 {
     public class Deployments
