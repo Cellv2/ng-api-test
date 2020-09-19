@@ -15,15 +15,6 @@ export class DeploymentStatusComponent {
         http.get<Deployment[]>(`${baseUrl}deployment`).subscribe(
             (result) => {
                 this.deployments = result;
-                // this.deployments = result.map(deployment => deployment.currentOperationStatus = CurrentOperationStatus[deployment.currentOperationStatus]);
-                this.deployments = result.map((deployment) => {
-                    let current = {... deployment};
-                    current.currentOperationStatus = CurrentOperationStatus.Complete
-                    return current
-                    // return {...deployment, {deployment.currentOperationStatus: "awdawd"}}
-                    // // deployment.currentOperationStatus =
-                    // //     "sefsef"
-                });
             },
             (err) => console.log(err)
         );
@@ -32,13 +23,8 @@ export class DeploymentStatusComponent {
 
 interface Deployment {
     name: string;
-    currentOperationStatus: CurrentOperationStatus;
+    currentOperationStatus: {
+        value: string;
+    };
     currentOperationCompletionPercentage: number;
-}
-
-enum CurrentOperationStatus {
-    Complete = "COMPLETE",
-    Failed = "FAILED",
-    InProgress = "IN_PROGRESS",
-    Enqueued = "EMQUEUED",
 }

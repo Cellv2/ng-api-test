@@ -14,7 +14,7 @@ namespace ng_api_test.Controllers
         private Deployment deployment = new Deployment
         {
             Name = "Test Deployment",
-            CurrentOperationStatus = DeploymentStatus.Enums.EDeploymentOperationStatus.Enqueued,
+            CurrentOperationStatus = DeploymentOperationStatus.Complete,
             CurrentOperationCompletionPercentage = 0,
         };
 
@@ -25,7 +25,7 @@ namespace ng_api_test.Controllers
             {
                 Name = $"Deployment {index}",
                 CurrentOperationCompletionPercentage = 50,
-                CurrentOperationStatus = DeploymentStatus.Enums.EDeploymentOperationStatus.Complete
+                CurrentOperationStatus = DeploymentOperationStatus.Complete
             }).ToArray();
         }
     }
