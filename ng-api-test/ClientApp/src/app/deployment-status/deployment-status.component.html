@@ -1,0 +1,21 @@
+﻿<div style="border: 1px solid red">DeploymentStatus Component</div>
+
+<p *ngIf="!deployments">Waiting for deployments to load...</p>
+
+<table *ngIf="deployments" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Current Operation</th>
+            <th>% Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let deployment of deployments">
+            <td>{{deployment.name}}</td>
+            <td>{{deployment.currentOperationStatus}}</td>
+            <td>{{deployment.currentOperationCompletionPercentage}}</td>
+        </tr>
+    </tbody>
+</table>
+
