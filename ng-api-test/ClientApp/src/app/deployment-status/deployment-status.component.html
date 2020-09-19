@@ -1,4 +1,6 @@
-﻿<div style="border: 1px solid red">DeploymentStatus Component</div>
+﻿<h1>Deployment Status</h1>
+
+<p>This reloads every {{ interval / 1000 }} seconds</p>
 
 <p *ngIf="!deployments">Waiting for deployments to load...</p>
 
@@ -12,10 +14,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let deployment of deployments">
-            <td>{{deployment.name}}</td>
-            <td>{{deployment.currentOperationStatus.value}}</td>
-            <td>{{deployment.currentOperationCompletionPercentage}}</td>
+            <td>{{ deployment.name }}</td>
+            <td>{{ deployment.currentOperationStatus.value }}</td>
+            <td>{{ deployment.currentOperationCompletionPercentage }}</td>
         </tr>
     </tbody>
 </table>
-
